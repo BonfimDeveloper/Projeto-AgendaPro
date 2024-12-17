@@ -1,0 +1,25 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  @apply border-solid border-2 border-slate-300 p-2;
+}
+
+
+
+.header {
+  background-color: #e7d9d9;
+}
+
+.side-title {
+  background-color: #b39ddb;
+  font-weight: bold;
+}
+
+.blue { color: blue; }
+.purple { color: purple; }
+.red { color: red; }

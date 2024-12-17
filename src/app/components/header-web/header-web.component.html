@@ -1,0 +1,23 @@
+<div class="fixed bg-blue-500 w-full z-[1000] text-white p-8 mat-elevation-z1">
+  <div class="flex flex-row justify-between">
+    <div class="flex flex-row items-center gap-8">
+      <button class="flex sm:hidden"><mat-icon> menu </mat-icon></button>
+      <button class="flex text-lg font-semibold">AgendaPro</button>
+    </div>
+    <div
+      class="flex flex-row items-center gap-10 sm:gap-24 text-lg font-semibold"
+    >
+      <button (click)="navegarParaDashboard()">Dashboard</button>
+      <button>page 2</button>
+      <button>Page 3</button>
+      <button>Page 4</button>
+      <button>Page 5</button>
+      <div class="flex">
+        <button class="flex flex-row justify-center items-center gap-2">
+          <span>Logout</span>
+          <span class="material-symbols-outlined"> logout </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
