@@ -1,7 +1,9 @@
 <div
   class="flex flex-row justify-between w-full mb-2 border-2 pt-2 pb-2 pr-4 pl-4 rounded-md items-center"
 >
-  <h2 class="text-2xl font-semibold text-slate-500">Janeiro / 2025</h2>
+  <h2 class="text-2xl font-semibold text-slate-500">
+    Janeiro | {{ currentYear }}
+  </h2>
   <button
     matTooltip="Baixar Planilha CSV"
     matTooltipPosition="above"
@@ -14,7 +16,7 @@
 </div>
 <table>
   <!-- Cabeçalho -->
-  <tr>
+  <tr class="text-slate-500">
     <th class="bg-pink-200 font-bold text-lg"></th>
     <th class="bg-pink-200 font-bold text-lg">DOMINGO</th>
     <th class="bg-pink-200 font-bold text-lg">SEGUNDA</th>
@@ -37,8 +39,8 @@
     <td class="bg-blue-500 text-white font-bold text-lg">10</td>
   </tr>
   <tr>
-    <td class="bg-pink-200 font-bold text-lg">1ª SEMANA</td>
-    <td>Lilia<br />Lorena<br />Cinthya</td>
+    <td class="bg-pink-200 font-bold text-lg text-slate-500">1ª SEMANA</td>
+    <!-- <td>Lilia<br />Lorena<br />Cinthya</td>
     <td>Lilia<br />Thais<br />Carol</td>
     <td>Lilia<br />Valdi<br />Carol</td>
     <td>Lilia<br />Lorena<br />Cinthya</td>
@@ -48,7 +50,55 @@
         >Mariana</span
       >
     </td>
-    <td>Thais<br />Valdi<br /><span class="blue">Monica</span></td>
+    <td>Thais<br />Valdi<br /><span class="blue">Monica</span></td> -->
+    <td>
+      <button mat-button (click)="openDialog()">
+        <span
+          class="material-symbols-outlined bg-slate-100 text-slate-500 p-2 rounded-full"
+        >
+          person_add
+        </span>
+      </button>
+      <p class="font-semibold text-slate-500" *ngFor="let nome of nomesSelecionados">
+        {{ nome }}
+      </p>
+    </td>
+
+    <td>
+      <p *ngFor="let nome of nomesSelecionados">
+        {{ nome }}
+      </p>
+    </td>
+
+    <td>
+      <p *ngFor="let nome of nomesSelecionados">
+        {{ nome }}
+      </p>
+    </td>
+
+    <td>
+      <p *ngFor="let nome of nomesSelecionados">
+        {{ nome }}
+      </p>
+    </td>
+
+    <td>
+      <p *ngFor="let nome of nomesSelecionados">
+        {{ nome }}
+      </p>
+    </td>
+
+    <td>
+      <p *ngFor="let nome of nomesSelecionados">
+        {{ nome }}
+      </p>
+    </td>
+
+    <td>
+      <p *ngFor="let nome of nomesSelecionados">
+        {{ nome }}
+      </p>
+    </td>
   </tr>
   <tr>
     <td class="bg-pink-200 font-bold text-lg"></td>
@@ -63,7 +113,7 @@
 
   <!-- S2 -->
   <tr>
-    <td class="bg-pink-200 font-bold text-lg">2ª SEMANA</td>
+    <td class="bg-pink-200 font-bold text-lg text-slate-500">2ª SEMANA</td>
     <td>Lilia<br />Lorena<br />Cinthya</td>
     <td>Lilia<br />Thais<br />Carol</td>
     <td>Lilia<br />Valdi<br />Carol</td>
@@ -90,7 +140,7 @@
 
   <!-- S3 -->
   <tr>
-    <td class="bg-pink-200 font-bold text-lg">3ª SEMANA</td>
+    <td class="bg-pink-200 font-bold text-lg text-slate-500">3ª SEMANA</td>
     <td>Lorena<br />Thais<br />Valdi</td>
     <td>Monica<br />Bárbara<br />Carol</td>
     <td>Thais<br />Bárbara<br />Carol</td>
@@ -113,7 +163,7 @@
 
   <!-- S4 -->
   <tr>
-    <td class="bg-pink-200 font-bold text-lg">4ª SEMANA</td>
+    <td class="bg-pink-200 font-bold text-lg text-slate-500">4ª SEMANA</td>
     <td>25<br />Lorena<br />Raiza<br />Cinthya</td>
     <td>
       26<br /><span class="red">Bárbara</span><br />Raiza<br /><span
@@ -132,3 +182,31 @@
     <td></td>
   </tr>
 </table>
+
+
+
+<ng-template #dialogTemplate>
+  <div class="p-10">
+    <h2 class="text-4xl">Selecione os nomes para a escala:</h2>
+    <mat-dialog-content>
+      <div class="max-w-full">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Colaboradores</mat-label>
+          <mat-select  [formControl]="toppings" multiple>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">
+              {{ topping }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button
+        class="bg-blue-500 hover:bg-blue-600 transition-all text-white pt-2 pb-2 pl-4 pr-4 rounded"
+        mat-dialog-close
+      >
+        Salvar
+      </button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>

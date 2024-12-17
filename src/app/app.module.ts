@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderWebComponent } from './components/header-web/header-web.component';
@@ -16,6 +18,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { TabelaJaneiroComponent } from './components/tabela-janeiro/tabela-janeiro.component';
+import { ModalEscalaSelecionavelComponent } from './components/modal-escala-selecionavel/modal-escala-selecionavel.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { TabelaJaneiroComponent } from './components/tabela-janeiro/tabela-janei
     HeaderWebComponent,
     DashboardComponent,
     TabelaJaneiroComponent,
+    ModalEscalaSelecionavelComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,8 @@ import { TabelaJaneiroComponent } from './components/tabela-janeiro/tabela-janei
     MatFormFieldModule,
     ReactiveFormsModule,
     MatTooltipModule,
+    MatSelectModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
