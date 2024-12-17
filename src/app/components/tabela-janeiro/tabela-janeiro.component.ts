@@ -52,4 +52,8 @@ export class TabelaJaneiroComponent implements OnInit {
   openDialog(): void {
     this.dialog.open(this.dialogTemplate);
   }
+
+  closeDialog(): void {
+    this.dialog.closeAll();
+  }
 }
